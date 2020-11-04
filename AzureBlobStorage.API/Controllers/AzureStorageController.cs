@@ -18,6 +18,10 @@ namespace AzureBlobStorage.API.Controllers
 
         #region| Constructor |
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="blobService"></param>
         public AzureStorageController(IBlobService blobService)
         {
             service = blobService;

@@ -20,6 +20,10 @@ namespace AzureBlobStorage.API
 
         #region| Constructor |
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="blobServiceClient">BlobServiceClient</param>
         public BlobService(BlobServiceClient blobServiceClient)
         {
             _blobServiceClient = blobServiceClient;
@@ -29,6 +33,14 @@ namespace AzureBlobStorage.API
 
         #region| Methods |
 
+        /// <summary>
+        /// Upload a file to the Azure Storage Account into the image container
+        /// </summary>
+        /// <param name="blobContainerName">blobContainerName</param>
+        /// <param name="content">file stream content</param>
+        /// <param name="contentType">contentType</param>
+        /// <param name="fileName">fileName</param>
+        /// <returns>Uri</returns>
         public async Task<Uri> UploadFileBlobAsync(string blobContainerName, Stream content, string contentType, string fileName)
         {
             var containerClient = GetContainerClient(blobContainerName);
@@ -39,6 +51,12 @@ namespace AzureBlobStorage.API
             return blobClient.Uri;
         }
 
+        /// <summary>
+        /// Delete a file to the Azure Storage Account into the image container
+        /// </summary>
+        /// <param name="blobContainerName"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public async Task DeleteFileBlobAsync(string blobContainerName, string fileName)
         {
             var containerClient = _blobServiceClient.GetBlobContainerClient(blobContainerName);
@@ -46,6 +64,11 @@ namespace AzureBlobStorage.API
             await containerClient.DeleteBlobIfExistsAsync(fileName);
         }
 
+        /// <summary>
+        /// Get the container client
+        /// </summary>
+        /// <param name="blobContainerName"></param>
+        /// <returns>BlobContainerClient</returns>
         private BlobContainerClient GetContainerClient(string blobContainerName)
         {
             var containerClient = _blobServiceClient.GetBlobContainerClient(blobContainerName);
