@@ -1,4 +1,4 @@
-# Streetwire - Azure blob storage API
+# Azure blob storage API
 #### Azure blob storage service
 It is a ASP.NET Core API that provides Azure Blob Storage service to manage files in a Azure Storage Account
 
