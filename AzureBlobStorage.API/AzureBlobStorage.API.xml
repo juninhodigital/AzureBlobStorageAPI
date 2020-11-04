@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AzureBlobStorage.API</name>
+    </assembly>
+    <members>
+        <member name="T:AzureBlobStorage.API.Controllers.AzureStorageController">
+            <summary>
+            Azure Storage Controller in charge of managing file in a container
+            </summary>
+        </member>
+        <member name="M:AzureBlobStorage.API.Controllers.AzureStorageController.UploadFileBlobAsync">
+            <summary>
+            Upload a file to the Azure Storage Account into the image container
+            </summary>
+        </member>
+        <member name="M:AzureBlobStorage.API.Controllers.AzureStorageController.DeleteFileBlobAsync(System.String)">
+            <summary>
+            Delete a file to the Azure Storage Account into the image container
+            </summary>
+            <param name="fileName">file name with the container in the Azure Storage</param>
+        </member>
+        <member name="T:AzureBlobStorage.API.BlobService">
+            <summary>
+            Azure Blob Storage Service
+            </summary>
+        </member>
+        <member name="T:AzureBlobStorage.API.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:AzureBlobStorage.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AzureBlobStorage.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AzureBlobStorage.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
